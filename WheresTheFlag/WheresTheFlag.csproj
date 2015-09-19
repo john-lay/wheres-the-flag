@@ -72,6 +72,8 @@
     <Content Include="platforms\android\.gradle\2.2.1\taskArtifacts\fileSnapshots.bin" />
     <Content Include="platforms\android\.gradle\2.2.1\taskArtifacts\outputFileStates.bin" />
     <Content Include="platforms\android\.gradle\2.2.1\taskArtifacts\taskArtifacts.bin" />
+    <Content Include="platforms\android\assets\www\js\Controllers\app.controller.js" />
+    <Content Include="platforms\android\assets\www\js\Controllers\playlist.controller.js" />
     <Content Include="platforms\android\assets\www\lib\ionic\fonts\ionicons.eot" />
     <Content Include="platforms\android\assets\www\lib\ionic\fonts\ionicons.ttf" />
     <Content Include="platforms\android\assets\www\lib\ionic\fonts\ionicons.woff" />
@@ -463,6 +465,8 @@
     <Content Include="plugins\fetch.json" />
     <Content Include="scss\ionic.app.scss" />
     <Content Include="packages.config" />
+    <Content Include="platforms\android\assets\www\js\Controllers\app.controller.js.map" />
+    <Content Include="platforms\android\assets\www\js\Controllers\playlist.controller.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -531,7 +535,6 @@
     <Content Include="platforms\android\assets\www\img\ionic.png" />
     <Content Include="platforms\android\assets\www\index.html" />
     <Content Include="platforms\android\assets\www\js\app.js" />
-    <Content Include="platforms\android\assets\www\js\controllers.js" />
     <Content Include="platforms\android\assets\www\lib\ionic\css\ionic.css" />
     <Content Include="platforms\android\assets\www\lib\ionic\css\ionic.min.css" />
     <Content Include="platforms\android\assets\www\lib\ionic\fonts\ionicons.svg" />
@@ -823,7 +826,6 @@
     <Content Include="www\img\ionic.png" />
     <Content Include="www\index.html" />
     <Content Include="www\js\app.js" />
-    <Content Include="www\js\controllers.js" />
     <Content Include="www\lib\ionic\css\ionic.css" />
     <Content Include="www\lib\ionic\css\ionic.min.css" />
     <Content Include="www\lib\ionic\fonts\ionicons.svg" />
@@ -893,6 +895,8 @@
     <Folder Include="platforms\android\libs\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="platforms\android\assets\www\js\Controllers\app.controller.ts" />
+    <TypeScriptCompile Include="platforms\android\assets\www\js\Controllers\playlist.controller.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular-ui\angular-ui-sortable.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
@@ -926,8 +930,8 @@
     <TypeScriptCompile Include="Scripts\typings\cordova\plugins\WebSQL.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\ionic\ionic.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    <TypeScriptCompile Include="www\js\Controllers\PlaylistController.ts" />
-    <TypeScriptCompile Include="www\js\Controllers\AppController.ts" />
+    <TypeScriptCompile Include="www\js\Controllers\app.controller.ts" />
+    <TypeScriptCompile Include="www\js\Controllers\playlist.controller.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
