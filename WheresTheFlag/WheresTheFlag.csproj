@@ -924,7 +924,7 @@
     <TypeScriptCompile Include="Scripts\typings\ionic\ionic.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="www\js\app.ts" />
-    <TypeScriptCompile Include="www\js\config.ts" />
+    <TypeScriptCompile Include="www\js\route.ts" />
     <TypeScriptCompile Include="www\js\Controllers\app.controller.ts" />
     <TypeScriptCompile Include="www\js\Controllers\playlist.controller.ts" />
   </ItemGroup>
