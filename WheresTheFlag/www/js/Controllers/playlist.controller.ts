@@ -2,7 +2,7 @@
 /// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../../scripts/typings/ionic/ionic.d.ts" />
 
-module PlaylistModule {
+module AppModule {
     'use strict';
 
     /*** ANGULAR SCOPE ***/
@@ -37,6 +37,5 @@ module PlaylistModule {
 }
 
 // Attach the controller to the app
-angular.module('controllers.playlist', [])
-    .controller("PlaylistsCtrl", PlaylistModule.PlaylistController)
+app.controller("PlaylistsCtrl", AppModule.PlaylistController)
     .controller('PlaylistCtrl', ($scope: angular.IScope, $stateParams: ng.ui.IStateParamsService) => { }); 

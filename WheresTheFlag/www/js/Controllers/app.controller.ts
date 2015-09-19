@@ -1,4 +1,5 @@
-﻿/// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
+﻿/// <reference path="../app.ts" />
+/// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../../scripts/typings/ionic/ionic.d.ts" />
  
 module AppModule {
@@ -72,5 +73,4 @@ module AppModule {
 }
 
 // Attach the controller to the app
-angular.module('controllers.app', [])
-    .controller("AppCtrl", AppModule.AppController);
+app.controller("AppCtrl", AppModule.AppController);
