@@ -1,6 +1,7 @@
 ﻿/// <reference path="../app.ts" />
 /// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../../scripts/typings/ionic/ionic.d.ts" />
+/// <reference path="../services/camera.service.ts" />
  
 module AppModule {
     'use strict';
@@ -10,11 +11,13 @@ module AppModule {
         // PROPERTIES
         loginData: any;
         modal: any;
+        pictureUrl: string;
 
         // PUBLIC METHODS
         closeLogin(): void;
         login(): void;
         doLogin(): void;
+        GetPicture(): void;
 
     }
 
@@ -24,12 +27,18 @@ module AppModule {
     /*** ANGULAR CONTROLLER ***/
     export class AppController {
 
-        static $inject = ["$scope", "$ionicModal", "$timeout"];
+        static $inject = ["$scope", "$ionicModal", "$timeout", "CameraService"];
 
-        constructor(scope: IAppScope, ionicModal: ionic.modal.IonicModalService, timeout: ng.ITimeoutService) {
+        constructor(scope: IAppScope,
+            ionicModal: ionic.modal.IonicModalService,
+            timeout: ng.ITimeoutService,
+            CameraService: CameraModule.CameraService) {
             
             // Debug only
             appScope = scope;
+
+            //init properties
+            scope.pictureUrl = "image path...";
 
             // With the new view caching in Ionic, Controllers are only called
             // when they are recreated or on app start, instead of every page change.
@@ -68,6 +77,15 @@ module AppModule {
                     scope.closeLogin();
                 }, 1000);
             };
+
+            scope.GetPicture = () => {
+                CameraService.GetPicture();
+            }
+
+            scope.$on('CameraService.GetPictureSuccess', (event: angular.IAngularEvent, result: string) => {
+                console.log(result);
+                scope.pictureUrl = result;
+            });
         }
     }
 }

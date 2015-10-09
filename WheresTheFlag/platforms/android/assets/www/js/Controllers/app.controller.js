@@ -1,5 +1,7 @@
+/// <reference path="../app.ts" />
 /// <reference path="../../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../../scripts/typings/ionic/ionic.d.ts" />
+/// <reference path="../services/camera.service.ts" />
 var AppModule;
 (function (AppModule) {
     'use strict';
@@ -7,9 +9,11 @@ var AppModule;
     AppModule.appScope;
     /*** ANGULAR CONTROLLER ***/
     var AppController = (function () {
-        function AppController(scope, ionicModal, timeout) {
+        function AppController(scope, ionicModal, timeout, CameraService) {
             // Debug only
             AppModule.appScope = scope;
+            //init properties
+            scope.pictureUrl = "test";
             // With the new view caching in Ionic, Controllers are only called
             // when they are recreated or on app start, instead of every page change.
             // To listen for when this page is active (for example, to refresh data),
@@ -41,13 +45,21 @@ var AppModule;
                     scope.closeLogin();
                 }, 1000);
             };
+            scope.GetPicture = function () {
+                console.log("test");
+                CameraService.GetPicture();
+            };
+            scope.$on('CameraService.GetPictureSuccess', function (event, result) {
+                console.log(result);
+                scope.pictureUrl = result;
+            });
+            console.log("app ctrl loaded");
         }
-        AppController.$inject = ["$scope", "$ionicModal", "$timeout"];
+        AppController.$inject = ["$scope", "$ionicModal", "$timeout", "CameraService"];
         return AppController;
     })();
     AppModule.AppController = AppController;
 })(AppModule || (AppModule = {}));
 // Attach the controller to the app
-angular.module('controllers.app', [])
-    .controller("AppCtrl", AppModule.AppController);
+app.controller("AppCtrl", AppModule.AppController);
 //# sourceMappingURL=app.controller.js.map

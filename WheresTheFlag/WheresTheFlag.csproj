@@ -927,6 +927,7 @@
     <TypeScriptCompile Include="www\js\route.ts" />
     <TypeScriptCompile Include="www\js\Controllers\app.controller.ts" />
     <TypeScriptCompile Include="www\js\Controllers\playlist.controller.ts" />
+    <TypeScriptCompile Include="www\js\Services\camera.service.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
